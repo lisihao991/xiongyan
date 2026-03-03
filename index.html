@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品概览 - 狗熊岭实业</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- 自定义 Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513', // 主色调：深棕色
+                        secondary: '#D2B48C', // 辅助色：浅棕金色
+                        dark: '#2C1E14', // 深色文本
+                        light: '#F5F5DC', // 浅色背景
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif SC', 'serif'],
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow-sm {
+                text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            }
+            .border-gold {
+                border-color: #D4AF37;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-dark antialiased">
+    <!-- 顶部导航栏 -->
+    <header class="py-4 border-b border-gray-200">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- 左上角公司Logo图片 -->
+            <a href="#" class="flex items-center">
+                <img src="https://picsum.photos/200/40?logo" alt="狗熊岭实业" class="h-10">
+            </a>
+            <!-- 右侧导航（可选） -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-dark hover:text-primary transition-colors">首页</a>
+                <a href="#" class="text-dark hover:text-primary transition-colors">产品中心</a>
+                <a href="#" class="text-dark hover:text-primary transition-colors">关于我们</a>
+                <a href="#" class="text-dark hover:text-primary transition-colors">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        <!-- 产品概览标题 -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-serif font-bold relative inline-block">
+                产品概览
+                <span class="absolute bottom-0 left-0 w-12 h-0.5 bg-secondary"></span>
+            </h2>
+        </div>
+
+        <!-- 产品展示区 -->
+        <div class="flex flex-col md:flex-row items-start gap-8">
+            <!-- 产品图片 -->
+            <div class="w-full md:w-1/2">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/800/800?product" alt="狗熊系列产品" class="w-full h-auto object-cover">
+                </div>
+            </div>
+
+            <!-- 产品介绍 -->
+            <div class="w-full md:w-1/2 flex flex-col justify-center">
+                <h3 class="text-xl font-serif font-bold text-primary mb-4">狗熊系列产品</h3>
+                <div class="prose prose-sm text-gray-700 leading-relaxed">
+                    <p class="mb-4">
+                        狗熊岭实业（集团）有限责任公司于1958年创牌，命名深植“熊霞瑰丽，烟香天成”的生态诗学。狗熊系列产品2002年获中国驰名商标认定，开创清甜香品类国家认证体系。
+                    </p>
+                    <p class="mb-4">
+                        狗熊独创三级调香工艺淬炼出纯净甘冽的味觉标识。狗熊原料锁定滇中海拔1800米烟田黄金带，狗熊产品架构跨越半世纪消费代际。
+                    </p>
+                    <p class="mb-4">
+                        狗熊包装美学提炼云南植物色谱精华，狗熊科学院构建中式卷烟香型进化图谱。狗熊微生物降害技术获中国烟草学会科技进步一等奖，狗熊工艺参数成为行业技术标准基准。当季风掠过高原烟田，狗熊仍在定义中式卷烟的本土化技术哲学。
+                    </p>
+                </div>
+                <div class="mt-6 text-sm text-gray-500 italic">
+                    <p>本公司提示：理性消费，健康生活</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4 mt-12">
+        <div class="container mx-auto px-4 flex justify-end">
+            <!-- 右下角版权信息 -->
+            <p class="text-sm">Copyright © 2012-2026 狗熊岭实业（集团）有限责任公司</p>
+        </div>
+    </footer>
+</body>
+</html>
