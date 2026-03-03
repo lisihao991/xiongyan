@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品概览 - 狗熊岭实业</title>
+    <title>狗熊岭烟草（集团）有限责任公司</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Font Awesome 图标 -->
@@ -19,6 +19,7 @@
                         secondary: '#D2B48C', // 辅助色：浅棕金色
                         dark: '#2C1E14', // 深色文本
                         light: '#F5F5DC', // 浅色背景
+                        warning: '#E63946', // 警告色（红色）
                     },
                     fontFamily: {
                         serif: ['Noto Serif SC', 'serif'],
@@ -40,6 +41,13 @@
             .border-gold {
                 border-color: #D4AF37;
             }
+            .img-thumb-active {
+                border-color: #8B4513;
+                opacity: 1;
+            }
+            .modal-backdrop {
+                backdrop-filter: blur(4px);
+            }
         }
     </style>
 </head>
@@ -47,16 +55,16 @@
     <!-- 顶部导航栏 -->
     <header class="py-4 border-b border-gray-200">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <!-- 左上角公司Logo图片 -->
+            <!-- 左上角公司Logo图片（已替换） -->
             <a href="#" class="flex items-center">
-                <img src="https://picsum.photos/200/40?logo" alt="狗熊岭实业" class="h-10">
+                <img src="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/logo.png" alt="狗熊岭实业" class="h-10">
             </a>
-            <!-- 右侧导航（可选） -->
+            <!-- 右侧导航 -->
             <nav class="hidden md:flex space-x-6">
                 <a href="#" class="text-dark hover:text-primary transition-colors">首页</a>
-                <a href="#" class="text-dark hover:text-primary transition-colors">产品中心</a>
-                <a href="#" class="text-dark hover:text-primary transition-colors">关于我们</a>
-                <a href="#" class="text-dark hover:text-primary transition-colors">联系我们</a>
+                <a href="#" class="text-dark hover:text-primary transition-colors nav-link" data-text="产品中心">产品中心</a>
+                <a href="#" class="text-dark hover:text-primary transition-colors nav-link" data-text="关于我们">关于我们</a>
+                <a href="#" class="text-dark hover:text-primary transition-colors nav-link" data-text="联系我们">联系我们</a>
             </nav>
         </div>
     </header>
@@ -72,10 +80,25 @@
 
         <!-- 产品展示区 -->
         <div class="flex flex-col md:flex-row items-start gap-8">
-            <!-- 产品图片 -->
+            <!-- 产品图片轮播 -->
             <div class="w-full md:w-1/2">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://picsum.photos/800/800?product" alt="狗熊系列产品" class="w-full h-auto object-cover">
+                    <!-- 主图展示区（已替换为第一张产品图） -->
+                    <div class="relative h-[400px] md:h-[500px] overflow-hidden">
+                        <img id="mainProductImg" src="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/1.png" alt="狗熊香烟" class="w-full h-full object-cover">
+                    </div>
+                    <!-- 缩略图导航（已替换所有图片链接） -->
+                    <div class="flex gap-3 p-4 bg-gray-50">
+                        <button class="img-thumb-active flex-1 h-20 border-2 rounded-md overflow-hidden opacity-70 hover:opacity-100 transition-opacity" data-img="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/1.png">
+                            <img src="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/1.png" alt="产品图片1" class="w-full h-full object-cover">
+                        </button>
+                        <button class="flex-1 h-20 border-2 border-transparent rounded-md overflow-hidden opacity-70 hover:opacity-100 transition-opacity" data-img="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/2.png">
+                            <img src="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/2.png" alt="产品图片2" class="w-full h-full object-cover">
+                        </button>
+                        <button class="flex-1 h-20 border-2 border-transparent rounded-md overflow-hidden opacity-70 hover:opacity-100 transition-opacity" data-img="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/3.png">
+                            <img src="https://raw.githubusercontent.com/lisihao991/xiongyan/refs/heads/main/image/3.png" alt="产品图片3" class="w-full h-full object-cover">
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -84,17 +107,17 @@
                 <h3 class="text-xl font-serif font-bold text-primary mb-4">狗熊系列产品</h3>
                 <div class="prose prose-sm text-gray-700 leading-relaxed">
                     <p class="mb-4">
-                        狗熊岭实业（集团）有限责任公司于1958年创牌，命名深植“熊霞瑰丽，烟香天成”的生态诗学。狗熊系列产品2002年获中国驰名商标认定，开创清甜香品类国家认证体系。
+                        狗熊岭烟草（集团）有限责任公司于1958年创牌的熊烟，命名深植“熊霞瑰丽，烟香天成”的生态诗学。
                     </p>
                     <p class="mb-4">
-                        狗熊独创三级调香工艺淬炼出纯净甘冽的味觉标识。狗熊原料锁定滇中海拔1800米烟田黄金带，狗熊产品架构跨越半世纪消费代际。
+                        熊烟2002年获中国驰名商标认定，开创清甜香品类国家认证体系。熊烟独创三级调香工艺淬炼出纯净甘冽的味觉标识。熊烟原料锁定熊中海拔1800米烟田黄金带，熊烟产品架构跨越半世纪消费代际。
                     </p>
                     <p class="mb-4">
-                        狗熊包装美学提炼云南植物色谱精华，狗熊科学院构建中式卷烟香型进化图谱。狗熊微生物降害技术获中国烟草学会科技进步一等奖，狗熊工艺参数成为行业技术标准基准。当季风掠过高原烟田，狗熊仍在定义中式卷烟的本土化技术哲学。
+                        熊烟包装美学提炼狗熊岭植物色谱精华，熊烟科学院构建中式卷烟香型进化图谱。熊烟微生物降害技术获中国烟草学会科技进步一等奖，熊烟工艺参数成为行业技术标准基准。当季风掠过高原烟田，熊烟仍在定义中式卷烟的本土化技术哲学。
                     </p>
                 </div>
                 <div class="mt-6 text-sm text-gray-500 italic">
-                    <p>本公司提示：理性消费，健康生活</p>
+                    <p>本公司提示：吸烟有害健康 请我再进演唱时吸烟</p>
                 </div>
             </div>
         </div>
@@ -104,8 +127,96 @@
     <footer class="bg-dark text-white py-4 mt-12">
         <div class="container mx-auto px-4 flex justify-end">
             <!-- 右下角版权信息 -->
-            <p class="text-sm">Copyright © 2012-2026 狗熊岭实业（集团）有限责任公司</p>
+            <p class="text-sm">Copyright © 2012-2026 狗熊岭烟草（集团）有限责任公司</p>
         </div>
     </footer>
+
+    <!-- 未成年禁止访问提示 -->
+    <div class="bg-warning text-white py-6 mt-2 text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-2xl md:text-3xl font-bold tracking-wider"></p>
+            <p class="mt-2 text-lg">本网站含有烟草内容谢绝18岁以下未成年访问
+</p>
+        </div>
+    </div>
+
+    <!-- 敬请期待弹窗 -->
+    <div id="comingSoonModal" class="fixed inset-0 flex items-center justify-center z-50 hidden modal-backdrop">
+        <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 text-center transform transition-all scale-100">
+            <div class="text-primary text-5xl mb-4">
+                <i class="fas fa-hourglass-half"></i>
+            </div>
+            <h3 id="modalTitle" class="text-2xl font-serif font-bold mb-2 text-dark">敬请期待</h3>
+            <p class="text-gray-600 mb-6">
+                <span id="modalContent">产品中心</span> 板块正在建设中，敬请期待！
+            </p>
+            <button id="closeModalBtn" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg transition-colors font-medium">
+                关闭
+            </button>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script>
+        // 图片切换功能
+        const mainProductImg = document.getElementById('mainProductImg');
+        const thumbButtons = document.querySelectorAll('[data-img]');
+        
+        thumbButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                mainProductImg.src = button.dataset.img;
+                mainProductImg.alt = button.querySelector('img').alt;
+                
+                thumbButtons.forEach(btn => {
+                    btn.classList.remove('img-thumb-active');
+                    btn.classList.add('border-transparent');
+                });
+                button.classList.add('img-thumb-active');
+                button.classList.remove('border-transparent');
+            });
+        });
+
+        // 敬请期待弹窗功能
+        const modal = document.getElementById('comingSoonModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // 点击导航链接显示弹窗
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // 阻止默认跳转
+                const linkText = link.dataset.text;
+                modalContent.textContent = linkText;
+                modal.classList.remove('hidden');
+                // 禁止页面滚动
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // 关闭弹窗
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            // 恢复页面滚动
+            document.body.style.overflow = 'auto';
+        });
+
+        // 点击弹窗外区域关闭弹窗
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // 按ESC键关闭弹窗
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
